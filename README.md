@@ -6,8 +6,11 @@ A headless cli to run an ephemeral IPFS node with read-only local gateway, examp
 
 ## To run
 1. Clone the repo
-2. Build the executable with command `go build -ldflags "-s -w" main.go`
+2. Build for the target platform. List of supported platform can be found with `go tool dist list`.
+    * Build the executable for OSX `GOOS=darwin GOARCH=amd64 go build -ldflags "-s -w" -o ipfs-gateway main.go`
+    * Rename the output to convention of `<filename>_<GOOS>_<GOARCH>`
 
 ## To include as library
 1. Clone the repo
-2. Build the static library with command `go build -buildmode=c-archive -o main.a main.go`
+2. Build the static library with command `go build -buildmode=c-archive -o ipfs-gateway.a main.go`
+    * Rename the output to convention of `<filename>_<GOOS>_<GOARCH>`
